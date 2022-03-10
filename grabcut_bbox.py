@@ -9,7 +9,7 @@ import os
 image = cv2.imread("input.jpg")
 mask = np.zeros(image.shape[:2], dtype="uint8")
 
-rect = (151, 43, 236, 368)
+rect = (151, 10, 236, 400)
 
 fgModel = np.zeros((1, 65), dtype="float")
 bgModel = np.zeros((1, 65), dtype="float")
