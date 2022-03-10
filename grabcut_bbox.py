@@ -7,8 +7,10 @@ from matplotlib import pyplot as plt
 import os
 
 image = cv2.imread("input.jpg")
-mask = np.zeros(image.shape[:2], dtype="uint8")
+# color no change
+img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
+mask = np.zeros(image.shape[:2], dtype="uint8")
 rect = (151, 10, 236, 400)
 
 fgModel = np.zeros((1, 65), dtype="float")
