@@ -7,12 +7,12 @@ img = cv.imread('input.jpg')
 mask = np.zeros(img.shape[:2], np.uint8)
 
 # color no change
-#img = cv.cvtColor(img, cv.COLOR_BGR2RGB)
+img = cv.cvtColor(img, cv.COLOR_BGR2RGB)
 
 bgdModel = np.zeros((1,65), np.float64)
 fgdModel = np.zeros((1,65), np.float64)
 
-rect = (50, 50, 450, 290)
+rect = (160, 0, 110, 400)
 cv.grabCut(img, mask,rect, bgdModel, fgdModel, 5, cv.GC_INIT_WITH_RECT)
 
 mask2 = np.where((mask==2)|(mask==0), 0, 1).astype('uint8')
